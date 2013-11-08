@@ -1,0 +1,10 @@
+#!/bin/bash
+TOGGLE=/tmp/toggle
+if [ ! -e $TOGGLE ]; then
+    touch $TOGGLE
+    status=$(pactl load-module module-loopback)
+    echo $status > /tmp/status
+else
+    rm $TOGGLE
+    pactl unload-module $(cat /tmp/status)
+fi
