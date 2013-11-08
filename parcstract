@@ -1,0 +1,13 @@
+#!/bin/bash
+file=$(yad --title "Select file to extract" --width 500 --height 400 --file --button="gtk-ok:0")
+folder=$(yad --title "Select folder to extract to" --width 500 --height 400 --file --directory --button="gtk-ok:0")
+ext=$(echo $file | sed 's/.*\.//')
+if [ $ext == "zip" ]; then
+	unzip $file -d $folder
+fi
+if [ $ext == "gz" ] || [ $ext == "bz2" ]; then
+	tar xvf $file -C $folder
+fi
+if [ $ext == "rar" ]; then
+	unrar x $file $folder
+fi
