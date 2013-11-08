@@ -1,0 +1,9 @@
+#!/bin/bash
+if yad --question --title "Resolution change" --text "Would you like to use native resolution?" --button="gtk-yes:0" --button="gtk-no:1"; then
+	cat ~/.q3a/baseq3/q3config.cfg | sed 's/seta r_mode ".*"/seta r_mode "-2"/' > /tmp/q3res
+	cat /tmp/q3res > ~/.q3a/baseq3/q3config.cfg;
+else
+	yad=$(yad --title "Desired resolution" --form --field "Width" --field="Height" --button="gtk-ok:0")
+	cat ~/.q3a/baseq3/q3config.cfg | sed 's/seta r_customwidth ".*"/seta r_customwidth "'$(echo $yad | cut -d"|" -f1)'"/' | sed 's/seta r_customheight ".*"/seta r_customheight "'$(echo $yad | cut -d"|" -f2)'"/' | sed 's/seta r_mode ".*"/seta r_mode "-1"/' > /tmp/q3res
+	cat /tmp/q3res > ~/.q3a/baseq3/q3config.cfg;
+fi
