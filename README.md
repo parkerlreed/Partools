@@ -1,4 +1,4 @@
 Partools
 ========
 
-A collection of various tool made by me
+A collection of various tools made by me
