@@ -10,6 +10,8 @@ q3res - script to change the resolution variables of your Quake 3 config file. R
 
 giturl - very basic script to clone a git repo you may have memorized. Usage: giturl parkerlreed Partools
 
+shoot- Screenshot script that auto uploads to imgur then copies the URL to the clipboard. Notifies after completion.
+
 ========
 
 Everything requires yad, a much improved version of zenity. You can get yad from 
