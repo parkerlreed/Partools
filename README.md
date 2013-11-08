@@ -12,6 +12,8 @@ giturl - very basic script to clone a git repo you may have memorized. Usage: gi
 
 shoot - Screenshot script that auto uploads to imgur then copies the URL to the clipboard. Notifies after completion.
 
+loobp - script to enable playback of default mic in pulseaudio. Run to enable. Run to disable.
+
 ========
 
 Everything requires yad, a much improved version of zenity. You can get yad from 
