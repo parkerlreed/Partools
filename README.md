@@ -16,5 +16,5 @@ loobp - script to enable playback of default mic in pulseaudio. Run to enable. R
 
 ========
 
-Everything requires yad, a much improved version of zenity. You can get yad from 
+Some scripts require yad, a much improved version of zenity. You can get yad from 
 https://code.google.com/p/yad/
