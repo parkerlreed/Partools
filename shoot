@@ -3,6 +3,6 @@ function uploadImage {
   curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" https://imgur.com/api/upload.xml | grep -E -o "<original_image>(.)*</original_image>" | grep -E -o "http://i.imgur.com/[^<]*"
 }
 
-imagepath=$(scrot -d 2 '%m-%d-%I:%M:%S_$wx$h.png' -e 'mv $f ~/images/ && echo "/home/parker/images/$f"')
+imagepath=$(scrot -d 2 '%m-%d-%I:%M:%S_$wx$h.png' -e 'mv $f ~/images/ && echo "/home/$(whoami)/images/$f"')
 uploadImage "$imagepath" | xclip -selection clipboard
 notify-send "$(echo $imagepath | cut -d/ -f 5) uploaded"
