@@ -20,7 +20,7 @@ To open parcstract from a browser download do the following
 
 Copy parcstract.desktop to either ~/.local/share/applications/ or /usr/share/applications/
 
-Run gvfs-mime --set application/zip extract.desktop
+Run gvfs-mime --set application/zip extract.desktop (Rerun for the different mimetypes you want aasociated)
 
 (If you don't have gvfs-mime either install gvfs-bin or add "application/zip=extract.desktop;" to "~/.local/share/applications/mimeapps.list" or "/usr/share/applications/mimeapps.list")
 
