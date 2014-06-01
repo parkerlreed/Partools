@@ -1,0 +1,33 @@
+#!/bin/bash
+apps=(`qdbus-qt4 | grep org.mpris.MediaPlayer2 | sed 's/.*\.//'`)
+
+control(){
+	for app in "${apps[@]}"
+	do    
+		dbus-send --print-reply --dest=org.mpris.MediaPlayer2.$app /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.$1
+	done
+}
+
+case "$1" in
+        play)
+		control Play
+                ;;
+        pause)
+		control Pause
+                ;;
+        playpause)
+		control PlayPause
+                ;;
+        next)
+		control Next
+                ;;
+        previous)
+		control Previous
+                ;;
+        stop)
+		control Stop
+                ;;
+        *)
+                echo -e "Bad argument.\n"
+                ;;
+esac
