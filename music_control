@@ -1,11 +1,11 @@
 #!/bin/bash
 # Change to qdbus on Ubuntu/Debian/derivatives. Arch has separate packages for each qt version
-apps=(`qdbus-qt4 | grep org.mpris.MediaPlayer2 | sed 's/.*\.//'`)
+apps=$(qdbus-qt4 | grep org.mpris.MediaPlayer2 | sed 's/.*\.//')
 
 control(){
 	for app in "${apps[@]}"
 	do    
-		dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.$app /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.$1
+		dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.$app /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
 	done
 }
 
