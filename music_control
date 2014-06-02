@@ -10,25 +10,25 @@ control(){
 }
 
 case "$1" in
-        play)
+	play)
 		control Play
-                ;;
-        pause)
+		;;
+	pause)
 		control Pause
-                ;;
-        playpause)
+		;;
+	playpause)
 		control PlayPause
-                ;;
-        next)
+		;;
+	next)
 		control Next
-                ;;
-        previous)
+		;;
+	previous)
 		control Previous
-                ;;
-        stop)
+		;;
+	stop)
 		control Stop
-                ;;
-        *)
-                echo -e "Bad argument.\n"
-                ;;
+		;;
+	*)
+		echo -e "Bad argument.\n"
+	;;
 esac
