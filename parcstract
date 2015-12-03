@@ -6,12 +6,8 @@ else
 fi
 folder=$(yad --title "Select folder to extract to" --width 500 --height 400 --file --directory --button="gtk-ok:0")
 ext=$(echo $file | sed 's/.*\.//')
-if [ $ext == "zip" ]; then
-	unzip "$file" -d "$folder"
-fi
-if [ $ext == "gz" ] || [ $ext == "bz2" ]; then
-	tar xvf "$file" -C "$folder"
-fi
-if [ $ext == "rar" ]; then
-	unrar x "$file" "$folder"
-fi
+case $ext in
+	zip) unzip "$file" -d "$folder";;
+	[gz,bz2]) tar xvf "$file" -C "$folder";;
+	rar) unrar x "$file" "$folder";;
+esac
